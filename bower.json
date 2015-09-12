@@ -1,0 +1,27 @@
+{
+  "name": "md2bbc.js",
+  "version": "0.0.0",
+  "authors": [
+    "Holi0317 <holliswuhollis@gmail.com>"
+  ],
+  "description": "Renderer for marked to convert markdown to bbcode",
+  "main": "lib/rbbcode.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "markdown",
+    "bbcode"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/holi0317/md2bbc.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
