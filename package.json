@@ -4,7 +4,8 @@
   "description": "Renderer for marked to convert markdown to bbcode",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-browser": ""
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/holi0317/md2bbc.js#readme",
   "devDependencies": {
     "marked": "^0.3.5",
+    "mocha": "^2.3.3",
     "should": "^7.1.0"
   }
 }

@@ -1,9 +1,11 @@
-var marked = require('marked');
-var Renderer = require('../index');
-require('should');
+if (typeof window === 'undefined') {
+  var marked = require('marked');
+  var md2bbc = require('../index');
+  require('should');
+}
 
 marked.setOptions({
-  renderer: new Renderer()
+  renderer: new md2bbc()
 })
 
 describe('Lists', function () {
