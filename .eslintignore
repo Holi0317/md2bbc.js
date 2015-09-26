@@ -1,1 +1,4 @@
 test/**/*.js
+
+# For whatever reason, linter-eslint tries to lint readme.md
+README.md
