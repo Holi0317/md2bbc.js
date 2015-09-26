@@ -12,7 +12,7 @@ Plugin for [marked](https://github.com/chjj/marked) that convert markdown to bbc
 
 `bower install --save md2bbc marked` if you want to use this in browser.
 
-This support node.js require, browserify, AMD(though I don't know how to use it) and <script>
+This support node.js require, browserify, AMD(though I don't know how to use it) and `<script>`
 
 ## Usage
 Node.js/browserify:
