@@ -1,9 +1,8 @@
 {
   "name": "md2bbc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Renderer for marked to convert markdown to bbcode",
   "main": "index.js",
-  "readme": "Read README.md",
   "scripts": {
     "test": "mocha"
   },
