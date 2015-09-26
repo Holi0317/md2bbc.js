@@ -1,4 +1,4 @@
-# md2bbc.js
+# md2bbc.js [![Build Status](https://travis-ci.org/Holi0317/md2bbc.js.svg?branch=master)](https://travis-ci.org/Holi0317/md2bbc.js)
 Markdown is cool. But forums only support bbcode.
 
 Is there a way to use markdown in forum?
