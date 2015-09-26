@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Renderer for marked to convert markdown to bbcode",
   "main": "index.js",
+  "readme": "Read README.md",
   "scripts": {
     "test": "mocha"
   },
