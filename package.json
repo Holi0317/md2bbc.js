@@ -1,6 +1,6 @@
 {
   "name": "md2bbc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Renderer for marked to convert markdown to bbcode",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/holi0317/md2bbc.js#readme",
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1",
     "marked": "^0.3.5",
     "mocha": "^2.3.3",
     "should": "^7.1.0"

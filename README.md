@@ -55,7 +55,7 @@ Browser:
 <head>
   <title>Marked in the browser</title>
   <script src="bower_components/marked/lib/marked.js"></script>
-  <script src="bower_components/md2bbc/lib/md2bbc.js"></script>
+  <script src="bower_components/md2bbc/lib/md2bbc.min.js"></script>
 </head>
 <body>
   <script>
@@ -75,3 +75,11 @@ Not all bbcode implementation got all features. For example, some does not have 
 1. Clone this repository
 2. Run `npm install`
 3. Run `npm test`
+
+## Build it
+Building this will minify the javascript and create a sourcemap for it.
+
+1. Install gulp globally by `npm install -g gulp`
+2. Run `npm install`
+3. Run `gulp`
+4. Built javascript will be in lib/
