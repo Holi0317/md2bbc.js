@@ -74,4 +74,4 @@ Not all bbcode implementation got all features. For example, some does not have 
 ## Running tests on node.js
 1. Clone this repository
 2. Run `npm install`
-3. Run `mocha`. Make sure mocha is installed globally via npm
+3. Run `npm test`
