@@ -1,1 +1,1 @@
-module.exports = require('./lib/rbbcode');
+module.exports = require('./lib/md2bbc');
