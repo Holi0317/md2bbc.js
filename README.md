@@ -1,4 +1,7 @@
-# md2bbc.js [![Build Status](https://travis-ci.org/Holi0317/md2bbc.js.svg?branch=master)](https://travis-ci.org/Holi0317/md2bbc.js)
+# md2bbc.js
+[![Build Status](https://img.shields.io/travis/Holi0317/md2bbc.js.svg?style=flat-square)](https://travis-ci.org/Holi0317/md2bbc.js)
+[![Coverage](https://img.shields.io/codecov/c/github/Holi0317/md2bbc.js.svg?style=flat-square)](https://codecov.io/github/Holi0317/md2bbc.js?branch=master)
+
 Markdown is cool. But forums only support bbcode.
 
 Is there a way to use markdown in forum?
