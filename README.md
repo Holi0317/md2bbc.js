@@ -10,6 +10,9 @@ With this question, this tool is invented.
 
 Plugin for [marked](https://github.com/chjj/marked) that convert markdown to bbcode.
 
+## To Users
+Hey! I am online and ready to use. Check the deployed version [here](https://holi0317.github.io/md2bbc-web).
+
 ## Install
 `npm install --save md2bbc marked` if you are using node.js or browserify, or;
 
