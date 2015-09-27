@@ -60,9 +60,15 @@ describe('Simple tags', function () {
   });
 
 
-  describe('#Line break', function () {
+  describe('#Paragraph break', function () {
     it('should render hr', function () {
       marked('***').should.equal('[hr]\n');
+    });
+  });
+
+  describe("#Line break", function () {
+    it('should render br', function () {
+      marked('line    \nbreak').should.equal('[div]line\nbreak[/div]\n');
     });
   });
 
