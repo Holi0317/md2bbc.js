@@ -1,1 +1,1 @@
-module.exports = require('./lib/md2bbc');
+module.exports = require('./dist/md2bbc');

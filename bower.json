@@ -5,7 +5,7 @@
     "Holi0317 <holliswuhollis@gmail.com>"
   ],
   "description": "Renderer for marked to convert markdown to bbcode",
-  "main": "lib/md2bbc.js",
+  "main": "dist/md2bbc.js",
   "moduleType": [
     "amd",
     "globals",

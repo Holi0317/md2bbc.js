@@ -1,15 +1,36 @@
 'use strict';
 
 let gulp = require('gulp');
-let uglify = require('gulp-uglify');
-let sourcemaps = require('gulp-sourcemaps');
-let rename = require('gulp-rename');
+let $ = require('gulp-load-plugins')();
+let del = require('del');
+let runSequence = require('run-sequence');
 
-gulp.task('default', () => {
-  gulp.src('lib/md2bbc.js')
-  .pipe(rename('md2bbc.min.js'))
-  .pipe(sourcemaps.init())
-    .pipe(uglify())
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest('lib'));
+const DIST = 'dist';
+
+gulp.task('clean', () => {
+  return del(DIST);
+});
+
+gulp.task('babel', () => {
+  return gulp.src('lib/md2bbc.js')
+  .pipe($.babel())
+  .pipe(gulp.dest(DIST));
+});
+
+gulp.task('uglify', () => {
+  return gulp.src('dist/md2bbc.js')
+  .pipe($.rename('md2bbc.min.js'))
+  .pipe($.sourcemaps.init())
+    .pipe($.uglify())
+  .pipe($.sourcemaps.write('.'))
+  .pipe(gulp.dest(DIST));
+});
+
+gulp.task('default', cb => {
+  runSequence(
+    'clean',
+    'babel',
+    'uglify',
+    cb
+  )
 });
