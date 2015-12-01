@@ -1,9 +1,11 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
+'use strict';
 
-gulp.task('default', function () {
+let gulp = require('gulp');
+let uglify = require('gulp-uglify');
+let sourcemaps = require('gulp-sourcemaps');
+let rename = require('gulp-rename');
+
+gulp.task('default', () => {
   gulp.src('lib/md2bbc.js')
   .pipe(rename('md2bbc.min.js'))
   .pipe(sourcemaps.init())
