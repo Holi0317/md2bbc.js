@@ -34,3 +34,8 @@ gulp.task('default', cb => {
     cb
   )
 });
+
+gulp.task('test', ['default'], () => {
+  return gulp.src('test/test.js', {read: false})
+    .pipe($.mocha())
+});
