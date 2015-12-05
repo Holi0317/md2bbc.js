@@ -8,7 +8,7 @@ let runSequence = require('run-sequence');
 const DIST = 'dist';
 
 gulp.task('clean', () => {
-  return del(DIST);
+  return del([DIST, 'coverage']);
 });
 
 gulp.task('babel', () => {
@@ -53,5 +53,10 @@ gulp.task('pre-test', cb => {
 gulp.task('test', ['pre-test'], () => {
   return gulp.src('test/test.js', {read: false})
     .pipe($.mocha())
-    .pipe($.istanbul.writeReports())
+    .pipe($.istanbul.writeReports({
+      reportOpts: {
+        dir: './coverage',
+        json: {file: 'converage.json', dir: './coverage'}
+      }
+    }))
 });
