@@ -56,7 +56,7 @@ gulp.task('test', ['pre-test'], () => {
     .pipe($.istanbul.writeReports({
       reportOpts: {
         dir: './coverage',
-        json: {file: 'converage.json', dir: './coverage'}
+        json: {file: 'coverage.json', dir: './coverage'}
       }
     }))
 });
