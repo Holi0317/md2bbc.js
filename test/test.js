@@ -6,9 +6,10 @@ if (typeof window === 'undefined') {
 
 marked.setOptions({
   renderer: new md2bbc()
-})
+});
 
 describe('Lists', function () {
+
   describe('#Unordered', function () {
     it('should render unordered list', function () {
       marked(' * First\n * Second').should.equal('[ul]\n[li]First[/li]\n[li]Second[/li]\n[/ul]\n');
@@ -25,11 +26,19 @@ describe('Lists', function () {
 describe('table', function () {
 
   it('should render table without any align', function () {
-    marked('| Tables | Are | Cool |\n | --- | --- | --- |\n | second  | line | table |').should.equal('[table width=98% broder=1]\n[tr]\n[th]Tables[/th]\n[th]Are[/th]\n[th]Cool[/th]\n[/tr]\n[tr]\n[td]second[/td]\n[td]line[/td]\n[td]table[/td]\n[/tr]\n[/table]\n');
+    marked('| Tables | Are | Cool |\n | --- | --- | --- |\n | second  | line | table |').should.equal('[table]\n[tr]\n[th]Tables[/th]\n[th]Are[/th]\n[th]Cool[/th]\n[/tr]\n[tr]\n[td]second[/td]\n[td]line[/td]\n[td]table[/td]\n[/tr]\n[/table]\n');
   });
 
   it('should render table with text align', function () {
-    marked('| Left | Centre | Right |\n|:---- |:----:| ----:|\n|test|is|important|').should.equal('[table width=98% broder=1]\n[tr]\n[th align=left]Left[/th]\n[th align=center]Centre[/th]\n[th align=right]Right[/th]\n[/tr]\n[tr]\n[td align=left]test[/td]\n[td align=center]is[/td]\n[td align=right]important[/td]\n[/tr]\n[/table]\n');
+    marked('| Left | Centre | Right |\n|:---- |:----:| ----:|\n|test|is|important|').should.equal('[table]\n[tr]\n[th align=left]Left[/th]\n[th align=center]Centre[/th]\n[th align=right]Right[/th]\n[/tr]\n[tr]\n[td align=left]test[/td]\n[td align=center]is[/td]\n[td align=right]important[/td]\n[/tr]\n[/table]\n');
+  });
+
+  it('should render table with options.tableAttr', function () {
+    marked('| Tables | Are | Cool |\n | --- | --- | --- |\n | second  | line | table |', {tableAttr: 'width=98%'}).should.equal('[table width=98%]\n[tr]\n[th]Tables[/th]\n[th]Are[/th]\n[th]Cool[/th]\n[/tr]\n[tr]\n[td]second[/td]\n[td]line[/td]\n[td]table[/td]\n[/tr]\n[/table]\n');
+  });
+
+  it('should not render text align when disenabled', function () {
+    marked('| Left | Centre | Right |\n|:---- |:----:| ----:|\n|test|is|important|', {tableAlign: false}).should.equal('[table]\n[tr]\n[th]Left[/th]\n[th]Centre[/th]\n[th]Right[/th]\n[/tr]\n[tr]\n[td]test[/td]\n[td]is[/td]\n[td]important[/td]\n[/tr]\n[/table]\n');
   });
 });
 
@@ -73,8 +82,12 @@ describe('Simple tags', function () {
   });
 
   describe('#Paragraph', function () {
-    it('should render inside div', function () {
+    it('should render inside div if no option is passed in', function () {
       marked('Paragraph\n\nAnother').should.equal('[div]Paragraph[/div]\n[div]Another[/div]\n');
+    });
+
+    it('should not render any tag if empty string is passed in as option', function () {
+      marked('Paragraph\n\nAnother', {paragraphTag: ''}).should.equal('Paragraph\nAnother\n');
     });
   });
 
