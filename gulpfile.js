@@ -36,15 +36,14 @@ gulp.task('default', cb => {
 });
 
 gulp.task('istanbul', () => {
-  return gulp.src(['dist/md2bbc.js'])
-    .pipe($.istanbul())
-    .pipe($.istanbul.hookRequire());
+  return gulp.src(['lib/**/*.js', 'index.js'])
+    .pipe($.babelIstanbul())
+    .pipe($.babelIstanbul.hookRequire());
 })
 
 gulp.task('pre-test', cb => {
   runSequence(
     'clean',
-    'babel',
     'istanbul',
     cb
   );
@@ -53,7 +52,7 @@ gulp.task('pre-test', cb => {
 gulp.task('test', ['pre-test'], () => {
   return gulp.src('test/test.js', {read: false})
     .pipe($.mocha())
-    .pipe($.istanbul.writeReports({
+    .pipe($.babelIstanbul.writeReports({
       reportOpts: {
         dir: './coverage',
         json: {file: 'coverage.json', dir: './coverage'}

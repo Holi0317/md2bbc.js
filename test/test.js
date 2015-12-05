@@ -1,6 +1,6 @@
 if (typeof window === 'undefined') {
   var marked = require('marked');
-  var md2bbc = require('../index');
+  var md2bbc = require('../lib/md2bbc');
   require('should');
 }
 
