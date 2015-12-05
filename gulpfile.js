@@ -35,7 +35,23 @@ gulp.task('default', cb => {
   )
 });
 
-gulp.task('test', ['default'], () => {
+gulp.task('istanbul', () => {
+  return gulp.src(['dist/md2bbc.js'])
+    .pipe($.istanbul())
+    .pipe($.istanbul.hookRequire());
+})
+
+gulp.task('pre-test', cb => {
+  runSequence(
+    'clean',
+    'babel',
+    'istanbul',
+    cb
+  );
+});
+
+gulp.task('test', ['pre-test'], () => {
   return gulp.src('test/test.js', {read: false})
     .pipe($.mocha())
+    .pipe($.istanbul.writeReports())
 });
